@@ -50,7 +50,8 @@ describe("solana-counter", () => {
     })
       .signers([initializer])
       .rpc();
-    console.log("Your transaction signature", tx, (await program.account.counter.fetch(counterAccount)).counter.toString());
+    console.log("Your transaction signature", tx);
+    console.log("Counter value", (await program.account.counter.fetch(counterAccount)).counter.toString());
   });
 
   it("Is incremented!", async () => {
@@ -60,7 +61,8 @@ describe("solana-counter", () => {
     })
       .signers([initializer])
       .rpc();
-    console.log("Your transaction signature", tx, (await program.account.counter.fetch(counterAccount)).counter);
+    console.log("Your transaction signature", tx);
+    console.log("Counter value", (await program.account.counter.fetch(counterAccount)).counter.toString());
   });
 
   it("Is decremented!", async () => {
@@ -70,7 +72,8 @@ describe("solana-counter", () => {
     })
       .signers([initializer])
       .rpc();
-    console.log("Your transaction signature", tx, (await program.account.counter.fetch(counterAccount)).counter);
+    console.log("Your transaction signature", tx);
+    console.log("Counter value", (await program.account.counter.fetch(counterAccount)).counter.toString());
   });
 
   it("Is removed!", async () => {
